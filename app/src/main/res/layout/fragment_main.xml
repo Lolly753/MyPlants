@@ -16,11 +16,12 @@
         android:orientation="vertical"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
 
 
         <LinearLayout
+            android:id="@+id/airhumidity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -28,8 +29,7 @@
             android:background="@drawable/rounded_corner_box"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="10dp"
-            android:id="@+id/airhumidity">
+            android:padding="10dp">
 
             <ImageView
                 android:id="@+id/imagewater"
@@ -57,8 +57,8 @@
                 android:id="@+id/percentage"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:layout_marginTop="5dp"
+                android:layout_weight="1"
                 android:text="%"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -68,6 +68,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/soilhumidity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -75,8 +76,7 @@
             android:background="@drawable/background_soilhumidity"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="10dp"
-            android:id="@+id/soilhumidity">
+            android:padding="10dp">
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -106,8 +106,8 @@
                 android:id="@+id/percentage2"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:layout_marginTop="5dp"
+                android:layout_weight="1"
                 android:text="%"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -117,6 +117,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/temperature"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -124,8 +125,7 @@
             android:background="@drawable/background_temperature"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="10dp"
-            android:id="@+id/temperature">
+            android:padding="10dp">
 
             <ImageView
                 android:id="@+id/imageView"
@@ -149,8 +149,8 @@
                 android:id="@+id/temperatureType"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:layout_marginTop="5dp"
+                android:layout_weight="1"
                 android:text="°C"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -160,6 +160,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/brightness"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -167,8 +168,7 @@
             android:background="@drawable/background_brightness"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="10dp"
-            android:id="@+id/brightness">
+            android:padding="10dp">
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -192,14 +192,12 @@
                 android:id="@+id/brightnessType"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:layout_marginTop="5dp"
+                android:layout_weight="1"
                 android:text="L"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="64sp" />
-
-
         </LinearLayout>
 
     </LinearLayout>

@@ -27,15 +27,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView humidityValue;
     private FloatingActionButton fab;
 
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    private LinearLayout soilhumiditybox;
+    private LinearLayout airhumiditybox;
+    private TextView airHumidityValue;
+    private int count;
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_main);
-        }
-    @Override
-    public void onClick(View view) {
 
+        setContentView(R.layout.fragment_main);
+
+        soilhumiditybox = findViewById(R.id.soilhumidity);
+        soilhumiditybox.setOnClickListener(this);
+
+        airhumiditybox  = findViewById(R.id.airhumidity);
+        airhumiditybox.setOnClickListener(this);
+
+        airHumidityValue = findViewById(R.id.airhumidityPercentage);
+        count = 0;
+
+    }
+
+    public void onClick(View view) {
+        Toast.makeText(this,"button clicked",Toast.LENGTH_SHORT).show();
+        switch (view.getId()) {
+            case R.id.soilhumidity:
+                count++;
+                airHumidityValue.setText(Integer.toString(count));
+                break;
+            case R.id.airhumidity:
+                count--;
+                airHumidityValue.setText(Integer.toString(count));
+                break;
+            default:
+                break;
+        }
     }
 }
 
