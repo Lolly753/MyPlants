@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/air_humidity_background">
+    android:background="@drawable/background_soilhumidity">
 
     <com.jjoe64.graphview.GraphView
         android:id="@+id/graph"

@@ -30,13 +30,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private LinearLayout soilhumiditybox;
     private LinearLayout airhumiditybox;
+    private LinearLayout temperaturebox;
+    private LinearLayout brightnessbox;
     private TextView airHumidityValue;
-    private int count;
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         initializeViews();
-        count = 0;
     }
 
 
@@ -50,14 +50,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         Toast.makeText(this,"button clicked",Toast.LENGTH_SHORT).show();
         switch (view.getId()) {
-            case R.id.soilhumidity:
-                count++;
-                airHumidityValue.setText(Integer.toString(count));
-                break;
             case R.id.airhumidity:
                 setContentView(R.layout.airhumidity_layout);
-                airHumidityValue.setText(Integer.toString(count));
                 break;
+            case R.id.soilhumidity:
+                setContentView(R.layout.soilhumidity_layout);
+                break;
+            case R.id.temperature:
+                setContentView(R.layout.temperature_layout);
+                break;
+            case R.id.brightness:
+                setContentView(R.layout.brightness_layout);
             default:
                 break;
         }
@@ -71,6 +74,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         airhumiditybox  = findViewById(R.id.airhumidity);
         airhumiditybox.setOnClickListener(this);
+
+        temperaturebox = findViewById(R.id.temperature);
+        temperaturebox.setOnClickListener(this);
+
+        brightnessbox = findViewById(R.id.brightness);
+        brightnessbox.setOnClickListener(this);
 
         airHumidityValue = findViewById(R.id.airhumidityPercentage);
     }
