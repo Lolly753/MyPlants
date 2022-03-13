@@ -6,6 +6,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
+import androidx.annotation.MainThread;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -31,20 +32,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private LinearLayout airhumiditybox;
     private TextView airHumidityValue;
     private int count;
+
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.fragment_main);
-
-        soilhumiditybox = findViewById(R.id.soilhumidity);
-        soilhumiditybox.setOnClickListener(this);
-
-        airhumiditybox  = findViewById(R.id.airhumidity);
-        airhumiditybox.setOnClickListener(this);
-
-        airHumidityValue = findViewById(R.id.airhumidityPercentage);
+        initializeViews();
         count = 0;
+    }
 
+
+    @Override
+    @MainThread
+    public void onBackPressed()
+    {
+        initializeViews();
     }
 
     public void onClick(View view) {
@@ -55,12 +55,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 airHumidityValue.setText(Integer.toString(count));
                 break;
             case R.id.airhumidity:
-                count--;
+                setContentView(R.layout.airhumidity_layout);
                 airHumidityValue.setText(Integer.toString(count));
                 break;
             default:
                 break;
         }
+    }
+
+    private void initializeViews() {
+        setContentView(R.layout.fragment_main);
+
+        soilhumiditybox = findViewById(R.id.soilhumidity);
+        soilhumiditybox.setOnClickListener(this);
+
+        airhumiditybox  = findViewById(R.id.airhumidity);
+        airhumiditybox.setOnClickListener(this);
+
+        airHumidityValue = findViewById(R.id.airhumidityPercentage);
     }
 }
 

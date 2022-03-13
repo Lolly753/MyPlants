@@ -13,7 +13,9 @@ import com.example.myplants.R;
 public class airHumidityActivity extends AppCompatActivity implements View.OnClickListener{
     private LinearLayout airhumiditybox;
     private TextView airHumidityValue;
+
     private int count;
+
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
 
@@ -21,6 +23,7 @@ public class airHumidityActivity extends AppCompatActivity implements View.OnCli
 
         airhumiditybox = (LinearLayout)findViewById(R.id.airhumidity);
         airHumidityValue = findViewById(R.id.airhumidityPercentage);
+
         count = 0;
 
         airhumiditybox.setOnClickListener(this);
