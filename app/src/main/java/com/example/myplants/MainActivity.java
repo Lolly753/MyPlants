@@ -2,6 +2,7 @@ package com.example.myplants;
 
 import android.os.Bundle;
 
+import com.example.myplants.ui.main.AirhumidityActiviy;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
@@ -16,7 +17,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import com.jjoe64.graphview.GraphView;
 import com.example.myplants.ui.main.SectionsPagerAdapter;
 import com.example.myplants.databinding.ActivityMainBinding;
 
@@ -24,15 +25,13 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private ActivityMainBinding binding;
-    private TextView humidityValue;
-    private FloatingActionButton fab;
-
     private LinearLayout soilhumiditybox;
     private LinearLayout airhumiditybox;
     private LinearLayout temperaturebox;
     private LinearLayout brightnessbox;
-    private TextView airHumidityValue;
+
+    private GraphView graphAirHumidity;
+
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -52,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.airhumidity:
                 setContentView(R.layout.airhumidity_layout);
+                graphAirHumidity = findViewById(R.id.graphAirhumidity);
                 break;
             case R.id.soilhumidity:
                 setContentView(R.layout.soilhumidity_layout);
@@ -80,8 +80,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         brightnessbox = findViewById(R.id.brightness);
         brightnessbox.setOnClickListener(this);
-
-        airHumidityValue = findViewById(R.id.airhumidityPercentage);
     }
 }
 

@@ -6,15 +6,26 @@
     android:layout_height="match_parent"
     android:background="@drawable/air_humidity_background">
 
+    <TextView
+        android:id="@+id/airhumidityTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Airhumidity"
+        android:textColor="@color/black"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.jjoe64.graphview.GraphView
-        android:id="@+id/graph"
+        android:id="@+id/graphAirhumidity"
         android:layout_width="match_parent"
         android:layout_height="200dip"
-        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/airhumidityTitle"
         app:layout_constraintVertical_bias="0.0" />
 
     <RadioGroup
@@ -23,11 +34,13 @@
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/graph"
-        android:orientation="horizontal">
+        app:layout_constraintTop_toBottomOf="@+id/graphAirhumidity"
+        android:orientation="horizontal"
+        android:id="@+id/rgAirhumidity">
+
 
         <RadioButton
-            android:id="@+id/rbday"
+            android:id="@+id/rbdayAirhumidity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -35,17 +48,17 @@
             android:checked="true"/>
 
         <RadioButton
-            android:id="@+id/rbweek"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="week" />
-        <RadioButton
-            android:id="@+id/rbmonth"
+            android:id="@+id/rbmonthAirhumidity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="month" />
+        <RadioButton
+            android:id="@+id/rbyearAirhumidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="year" />
 
 
     </RadioGroup>
